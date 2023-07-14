@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeaveManagement.Domain.Common
+﻿namespace LeaveManagement.Domain.Common
 {
     // абстрактный класс указывает на базовые поля, которые содержат все классы, которые наследуются от него
     public abstract class BaseDomainEntity
