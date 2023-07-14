@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace LeaveManagement.Application.DTOs.LeaveRequest
 {
-    public class CreateLeaveRequestDto
+    public class ChangeLeaveRequestApproval : BaseDto
     {
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public int LeaveTypeId { get; set; }
-        public string RequestComments { get; set; }
+        public bool? Approved { get; set; }
     }
 }
