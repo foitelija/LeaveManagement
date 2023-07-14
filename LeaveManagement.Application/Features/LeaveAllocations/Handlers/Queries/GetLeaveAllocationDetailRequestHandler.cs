@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using LeaveManagement.Application.DTOs;
-using LeaveManagement.Application.Features.LeaveAllocation.Requests.Queries;
+using LeaveManagement.Application.DTOs.LeaveAllocation;
+using LeaveManagement.Application.Features.LeaveAllocations.Requests.Queries;
 using LeaveManagement.Application.Persistence.Contracts;
 using MediatR;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagement.Application.Features.LeaveAllocation.Handlers.Queries
+namespace LeaveManagement.Application.Features.LeaveAllocations.Handlers.Queries
 {
     public class GetLeaveAllocationDetailRequestHandler : IRequestHandler<GetLeaveAllocationDetailRequest, LeaveAllocationDto>
     {
