@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LeaveManagement.Application.Exceptions
 {
-    public class ValidationException : ApplicationException
+    public class CustomBadRequestException : ApplicationException
     {
+        public CustomBadRequestException(string message) : base (message) { }
     }
 }

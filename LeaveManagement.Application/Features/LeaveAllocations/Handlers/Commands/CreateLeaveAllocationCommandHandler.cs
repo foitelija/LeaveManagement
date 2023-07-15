@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LeaveManagement.Application.DTOs.LeaveAllocation.Validators;
+using LeaveManagement.Application.Exceptions;
 using LeaveManagement.Application.Features.LeaveAllocations.Handlers.Commands;
 using LeaveManagement.Application.Features.LeaveAllocations.Requests.Commands;
 using LeaveManagement.Application.Persistence.Contracts;
@@ -33,7 +34,7 @@ namespace LeaveManagement.Application.Features.LeaveAllocations.Handlers.Command
 
             if(validationResult.IsValid == false)
             {
-                throw new Exception();
+                throw new CustomValidationException(validationResult);
             }
 
             var leaveAllocation = _mapper.Map<LeaveAllocation>(request.LeaveAllocationDto);

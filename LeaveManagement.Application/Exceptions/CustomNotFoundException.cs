@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LeaveManagement.Application.Exceptions
 {
-    public class NotFoundException : ApplicationException
+    public class CustomNotFoundException : ApplicationException
     {
-        public NotFoundException(string name, object key) : base($"{name} ({key}) was not found") { }
+        public CustomNotFoundException(string name, object key) : base($"{name} ({key}) was not found") { }
     }
 }

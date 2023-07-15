@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using LeaveManagement.Application.DTOs.LeaveType.Validators;
+using LeaveManagement.Application.Exceptions;
 using LeaveManagement.Application.Features.LeaveTypes.Requests.Commands;
 using LeaveManagement.Application.Persistence.Contracts;
 using LeaveManagement.Domain;
@@ -30,7 +31,7 @@ namespace LeaveManagement.Application.Features.LeaveTypes.Handlers.Commands
 
             if (validationResult.IsValid == false)
             {
-                throw new Exception();
+                throw new CustomValidationException(validationResult);
             }
 
             var leaveType = _mapper.Map<LeaveType>(request.LeaveTypeDto);

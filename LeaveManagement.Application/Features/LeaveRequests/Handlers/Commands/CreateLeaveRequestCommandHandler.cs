@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LeaveManagement.Application.DTOs.LeaveRequest.Validators;
+using LeaveManagement.Application.Exceptions;
 using LeaveManagement.Application.Features.LeaveRequests.Requests.Commands;
 using LeaveManagement.Application.Persistence.Contracts;
 using LeaveManagement.Domain;
@@ -32,7 +33,7 @@ namespace LeaveManagement.Application.Features.LeaveRequests.Handlers.Commands
 
             if (validationResult.IsValid == false)
             {
-                throw new Exception();
+                throw new CustomValidationException(validationResult);
             }
 
             var leaveRequest = _mapper.Map<LeaveRequest>(request.LeaveRequestDto);
