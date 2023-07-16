@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LeaveManagement.Application.Contracts.Infrastructure;
+using LeaveManagement.Application.Models;
 
 namespace LeaveManagement.Application.Features.LeaveRequests.Handlers.Commands
 {
@@ -19,12 +21,14 @@ namespace LeaveManagement.Application.Features.LeaveRequests.Handlers.Commands
         private readonly ILeaveRequestRepository _leaveRequestRepository;
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
+        private readonly IEmailSender _emailSender;
 
-        public CreateLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository, IMapper mapper, ILeaveTypeRepository leaveTypeRepository)
+        public CreateLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository, IMapper mapper, ILeaveTypeRepository leaveTypeRepository, IEmailSender emailSender)
         {
             _leaveRequestRepository = leaveRequestRepository;
             _mapper = mapper;
             _leaveTypeRepository = leaveTypeRepository;
+            _emailSender = emailSender;
         }
         public async Task<BaseCommandResponse> Handle(CreateLeaveRequestCommand request, CancellationToken cancellationToken)
         {
@@ -47,6 +51,15 @@ namespace LeaveManagement.Application.Features.LeaveRequests.Handlers.Commands
             {
                 leaveRequest = await _leaveRequestRepository.Add(leaveRequest);
 
+                var email = new Email
+                {
+                    To = "employee@gmail.com",
+                    Body = $"Your leave request from {request.LeaveRequestDto.StartDate:D} to {request.LeaveRequestDto.EndDate:D} has been submitted successfully",
+                    Subject = "Leave Request Submitted"
+                };
+
+                await _emailSender.SendEmail(email);
+
                 response.Success = true;
                 response.Message = "Creation Successful";
                 response.Id = leaveRequest.Id;
@@ -54,9 +67,11 @@ namespace LeaveManagement.Application.Features.LeaveRequests.Handlers.Commands
             catch(Exception ex)
             {
                 response.Success = false;
-                response.Message = "Database creation failed";
+                response.Message = "Something went wrong";
                 response.Errors.Add(ex.Message);
             }
+
+
 
             return response;
         }
