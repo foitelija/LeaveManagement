@@ -2,7 +2,7 @@
 using LeaveManagement.Application.DTOs.LeaveRequest.Validators;
 using LeaveManagement.Application.Exceptions;
 using LeaveManagement.Application.Features.LeaveRequests.Requests.Commands;
-using LeaveManagement.Application.Persistence.Contracts;
+using LeaveManagement.Application.Contracts.Persistence;
 using MediatR;
 using System;
 using System.Collections.Generic;
