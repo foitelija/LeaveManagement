@@ -1,6 +1,7 @@
 ﻿using LeaveManagement.Application.Contracts.Persistence;
 using LeaveManagement.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
