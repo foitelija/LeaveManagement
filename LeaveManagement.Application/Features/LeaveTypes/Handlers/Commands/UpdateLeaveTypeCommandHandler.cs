@@ -27,7 +27,8 @@ namespace LeaveManagement.Application.Features.LeaveTypes.Handlers.Commands
                 throw new CustomValidationException(validationResult);
             }
 
-            var leaveType = await _leaveTypeRepository.Get(request.LeaveTypeDto.Id);
+            var leaveType = await _leaveTypeRepository.Get(request.Id);
+            request.LeaveTypeDto.Id = leaveType.Id;
             _mapper.Map(request.LeaveTypeDto, leaveType);
 
             await _leaveTypeRepository.Update(leaveType);

@@ -4,6 +4,7 @@ using LeaveManagement.Application.Features.LeaveTypes.Requests.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Query;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -52,7 +53,7 @@ namespace LeaveManagement.API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] LeaveTypeDto leaveType)
         {
-            var command = new UpdateLeaveTypeCommand { Id =id, LeaveTypeDto = leaveType };
+            var command = new UpdateLeaveTypeCommand {Id = id,LeaveTypeDto = leaveType };
             await _mediator.Send(command);
             return NoContent();
         }
