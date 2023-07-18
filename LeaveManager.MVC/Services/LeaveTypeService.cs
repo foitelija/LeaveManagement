@@ -66,7 +66,7 @@ namespace LeaveManager.MVC.Services
         {
             try
             {
-                var leaveType = await _client.LeaveAllocationsGETAsync(id);
+                var leaveType = await _client.LeaveTypesGETAsync(id);
                 return _mapper.Map<LeaveTypeVM>(leaveType);
             }
             catch
