@@ -1,6 +1,10 @@
+using LeaveManagement.MVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient<IClient, Client>(cl => cl.BaseAddress = new Uri("http://localhost:44315"));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
