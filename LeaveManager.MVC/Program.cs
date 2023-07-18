@@ -1,9 +1,15 @@
-using LeaveManagement.MVC.Services;
+using LeaveManagement.MVC.Services.Base;
+using LeaveManager.MVC.Interfaces;
+using LeaveManager.MVC.Services;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpClient<IClient, Client>(cl => cl.BaseAddress = new Uri("http://localhost:44315"));
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<ILeaveTypeService, LeaveTypeService>(); 
+builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
 
 builder.Services.AddControllersWithViews();
 

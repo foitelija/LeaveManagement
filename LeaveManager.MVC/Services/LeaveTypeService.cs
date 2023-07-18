@@ -1,6 +1,8 @@
-﻿namespace LeaveManager.MVC.Services
+﻿using LeaveManager.MVC.Interfaces;
+
+namespace LeaveManager.MVC.Services
 {
-    public class LeaveTypeService
+    public class LeaveTypeService : ILeaveTypeService
     {
     }
 }
