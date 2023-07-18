@@ -1,5 +1,6 @@
 ﻿using LeaveManager.MVC.Models;
 using LeaveManager.MVC.Services.Base;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
 
 namespace LeaveManager.MVC.Interfaces
 {
@@ -8,7 +9,7 @@ namespace LeaveManager.MVC.Interfaces
         Task<List<LeaveTypeVM>> GetLeaveTypesAsync();
         Task<LeaveTypeVM> GetLeaveTypeDetailsAsync(int id);
         Task<Response<int>> CreateLeaveTypeAsync(CreateLeaveTypeVM leaveType);
-        Task UpdateLeaveTypeAsync(LeaveTypeVM leaveType);
-        Task DeleteLeaveTypeAsync(LeaveTypeVM leaveTypeVM);
+        Task<Response<int>> UpdateLeaveTypeAsync(int id, LeaveTypeVM leaveType);
+        Task<Response<int>> DeleteLeaveTypeAsync(int id);
     }
 }

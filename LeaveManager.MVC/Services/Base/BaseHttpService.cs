@@ -7,9 +7,9 @@ namespace LeaveManager.MVC.Services.Base
     public class BaseHttpService
     {
         protected readonly ILocalStorageService _localStorage;
-        protected IClient _client;
+        protected LeaveManagement.MVC.Services.Base.IClient _client;
 
-        public BaseHttpService(IClient client, ILocalStorageService localStorage)
+        public BaseHttpService(LeaveManagement.MVC.Services.Base.IClient client, ILocalStorageService localStorage)
         {
             _client = client;
             _localStorage = localStorage;
