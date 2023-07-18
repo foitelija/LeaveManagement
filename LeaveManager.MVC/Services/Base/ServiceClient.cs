@@ -174,6 +174,8 @@ namespace LeaveManagement.MVC.Services.Base
         /// <exception cref="ApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetWeatherForecastAsync(System.Threading.CancellationToken cancellationToken);
 
+        public HttpClient HttpClient { get; }
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -181,6 +183,14 @@ namespace LeaveManagement.MVC.Services.Base
     {
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
+
+        public HttpClient HttpClient
+        {
+            get
+            {
+                return _httpClient;
+            }
+        }
 
         public Client(System.Net.Http.HttpClient httpClient)
         {
