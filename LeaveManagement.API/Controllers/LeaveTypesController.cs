@@ -41,6 +41,8 @@ namespace LeaveManagement.API.Controllers
         // POST api/<LeaveTypesController>
         // Добавить новую запись в БД
         [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult> Post([FromBody] CreateLeaveTypeDto leaveType)
         {
             var command = new CreateLeaveTypeCommand { LeaveTypeDto = leaveType };

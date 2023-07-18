@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaveManagement.Infrastruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaveManagement.API", "LeaveManagement.API\LeaveManagement.API.csproj", "{E24A9689-98D7-4197-B100-337FB9C09876}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaveManager.MVC", "LeaveManager.MVC\LeaveManager.MVC.csproj", "{D15E6120-64C2-4B1C-B2A0-17F7EB1EC574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaveManager.MVC", "LeaveManager.MVC\LeaveManager.MVC.csproj", "{D15E6120-64C2-4B1C-B2A0-17F7EB1EC574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UnitTests", "Application.UnitTests\Application.UnitTests.csproj", "{C8CBA2CE-9AE3-4777-8E22-7EC985FBE807}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{D15E6120-64C2-4B1C-B2A0-17F7EB1EC574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D15E6120-64C2-4B1C-B2A0-17F7EB1EC574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D15E6120-64C2-4B1C-B2A0-17F7EB1EC574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CBA2CE-9AE3-4777-8E22-7EC985FBE807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CBA2CE-9AE3-4777-8E22-7EC985FBE807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CBA2CE-9AE3-4777-8E22-7EC985FBE807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CBA2CE-9AE3-4777-8E22-7EC985FBE807}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{97B3F08F-419E-4281-ABA6-5D5F63D01E75} = {927616DC-4817-49F5-8BFD-A0AA8BF97DA8}
 		{E24A9689-98D7-4197-B100-337FB9C09876} = {D3F72C35-78D6-46E7-AD41-F7C6B8ED5BAC}
 		{D15E6120-64C2-4B1C-B2A0-17F7EB1EC574} = {0D6B9994-57BA-41A7-A92E-3EBC89C162D8}
+		{C8CBA2CE-9AE3-4777-8E22-7EC985FBE807} = {A39C769F-656C-4213-8466-3FF4F5B09CD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B7DE90E-7F94-4885-979C-55AB57AC5F27}
